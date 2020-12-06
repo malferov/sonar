@@ -15,7 +15,6 @@ pipeline {
                 script {
                     scannerHome = tool 'scanner'
                 }
-                sh "cat ./template.json.nag > target/template.json.nag"
                 withSonarQubeEnv('sonar') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }

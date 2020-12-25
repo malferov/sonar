@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  sonar:
+    image: sonarqube:lts
+    ports:
+    - "9000:9000"
+    volumes:
+      - /opt/sonarqube/data
+      - /opt/sonarqube/extensions
+      - /opt/sonarqube/logs
+      - /opt/sonarqube/temp
+  jenkins:
+    build:
+      context: .
+    ports:
+    - "8080:8080"
+    volumes:
+      - /var/jenkins_home

@@ -1,6 +1,6 @@
-## cfn_nag report for SonarQube
+## cfn-nag report for SonarQube
 ```
-docker run -v `pwd`/template.yaml:/template.yaml stelligent/cfn_nag --output-format=json /template.yaml > template.yaml.nag
+docker run -v `pwd`/templates:/templates stelligent/cfn_nag_scan --output-format=json --input > template.yaml.nag
 ```
 
 ## Jenkins pipeline
